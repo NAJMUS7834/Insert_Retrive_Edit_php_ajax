@@ -1,17 +1,21 @@
+<!--Created by Najmus For retrive Subjects-->
 <?php
+//creating connection
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "new1";
-$sem = $_POST["sem"];
-$branch= $_POST["branch"];
+$dbname = "new1"; //database name
+$sem = $_POST["sem"];//key
+$branch= $_POST["branch"];//key
 // Create connection
 $conn = mysqli_connect($servername, $username,$password,$dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$result = mysqli_query($conn, "select * from subdb where subdb.sem='$sem' And subdb.branch='$branch'") or die("Query fail :" .mysqli_error());
+//query for retrieving from database
+$result = mysqli_query($conn, "select * from subdb where subdb.sem='$sem' And subdb.branch='$branch'") 
+	or die("Query fail :" .mysqli_error());
 ?>
     <?php
 	 while($rowval = mysqli_fetch_array($result))
@@ -58,6 +62,7 @@ $conn->close();
 <!--doctype html-->
   <html>
 	  <head>
+<!--css file for customization-->		  
 	  <style type="text/css">
 	.sub{
 		  width:100%;
@@ -83,11 +88,9 @@ $conn->close();
 		  margin-right:5px;
 	  }
 	  </style>
-
-
 	  </head>
 <body>
-
+<!--Simple form for retrieving data inside input-box-->
 <form action="subupdate.php" method="post" class="form__field"  >
             <td style="color:black;padding-left:5px;" class="auto-style3">Sem:</td>
             <td class="auto-style1">
@@ -216,10 +219,9 @@ $conn->close();
                 <input type="search" class="subc" name="sub16c" id="sub8c" type="text" value='<?php echo  $sub16c; ?>'/></td>
 				</tr>
 		</table>
-<!---elective subjects------------------------------>
-<!--<input type="search" type="submit" class="submit" id="submit" value="Update"/>-->
 	<button onclick="myFunction()"  value="Update">update</button>
-
+	
+	<!--Simple Java Script-Alert-->
 	           <script type="text/javascript">
 				 function myFunction(){
 

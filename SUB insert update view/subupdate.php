@@ -1,7 +1,7 @@
  <?php
 $servername = "localhost";
 $username = "root";
-
+/*Created by Najmus,Zeba,Ayushi*/
 $password = "";
 $dbname = "new1";
 $sem = $_POST["sem"];

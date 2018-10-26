@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-
+//Super function
 // Create connection
 $conn = mysqli_connect($servername, $username,$password);
 
@@ -11,7 +11,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 //echo "Connected successfully";
-
+//Created by ZINC
  mysqli_select_db( $conn,"new1");
 
  $sql="INSERT INTO `subdb` (`sem`, `branch`, `sub1`, `sub1c`, `sub2`, `sub2c`, `sub3`, `sub3c`, `sub4`, `sub4c`, `sub5`, `sub5c`, `sub6`, `sub6c`, `sub7`, `sub7c`, `sub8`, `sub8c`, `sub9`, `sub9c`, `sub10`, `sub10c`, `sub11`, `sub11c`, `sub12`, `sub12c`, `sub13`, `sub13c`, `sub14`, `sub14c`, `sub15`, `sub15c`, `sub16`, `sub16c`)
